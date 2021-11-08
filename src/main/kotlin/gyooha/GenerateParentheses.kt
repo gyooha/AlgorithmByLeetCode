@@ -12,7 +12,7 @@ class GenerateParentheses {
             left == 0 && right == 0 -> acc.add(str)
             else -> {
                 if (left <= right && left != 0) recursive(str.plus('('), left - 1, right, acc)
-                if (right != 0) recursive(str.plus(')'), left, right - 1, acc)
+                if (str.isNotEmpty() && right != 0) recursive(str.plus(')'), left, right - 1, acc)
             }
         }
     }
@@ -21,6 +21,6 @@ class GenerateParentheses {
 fun main() {
     GenerateParentheses().apply {
         println(generateParenthesis(3))
-        println(generateParenthesis(8))
+        println(generateParenthesis(1))
     }
 }
