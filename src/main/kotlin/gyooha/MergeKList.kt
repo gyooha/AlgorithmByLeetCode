@@ -1,5 +1,7 @@
 package gyooha
 
+import util.ListNode
+
 class MergeKList {
     fun mergeKLists(lists: Array<ListNode?>): ListNode? {
         if (lists.isEmpty()) return null
@@ -26,9 +28,5 @@ class MergeKList {
         }
 
         return head.next
-    }
-
-    class ListNode(var `val`: Int) {
-        var next: ListNode? = null
     }
 }

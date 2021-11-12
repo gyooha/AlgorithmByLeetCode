@@ -1,5 +1,7 @@
 package gyooha
 
+import util.ListNode
+
 class SwapNodesInPairs {
     fun swapPairs(head: ListNode?): ListNode? {
         if (head == null) return null
@@ -46,18 +48,14 @@ class SwapNodesInPairs {
         newHead?.next?.next = result
         return newHead
     }
-
-    class ListNode(var `val`: Int) {
-        var next: ListNode? = null
-    }
 }
 
 fun main() {
     SwapNodesInPairs().apply {
         test(
-            SwapNodesInPairs.ListNode(1).apply {
-                next = SwapNodesInPairs.ListNode(2).apply {
-                    next = SwapNodesInPairs.ListNode(3)
+            ListNode(1).apply {
+                next = ListNode(2).apply {
+                    next = ListNode(3)
                 }
             }
         ).also {

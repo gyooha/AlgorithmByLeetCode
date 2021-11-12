@@ -1,5 +1,8 @@
 package gyooha
 
+import util.ListNode
+import util.print
+
 class RemoveNthNodeFromEndofList {
     fun removeNthFromEnd(head: ListNode?, n: Int): ListNode? {
         var testNode = head
@@ -23,19 +26,6 @@ class RemoveNthNodeFromEndofList {
         }
 
         return result?.next
-    }
-
-    inner class ListNode(var `val`: Int) {
-        var next: ListNode? = null
-    }
-
-    fun RemoveNthNodeFromEndofList.ListNode?.printNode() {
-        var current = this
-        while (current != null) {
-            print("${current.`val`}, ")
-            current = current.next
-        }
-        println()
     }
 }
 
@@ -61,11 +51,11 @@ fun main() {
             next = ListNode(2)
         }
 
-        removeNthFromEnd(first, 1).printNode()
-        removeNthFromEnd(second, 1).printNode()
-        removeNthFromEnd(third, 2).printNode()
-        removeNthFromEnd(four, 2).printNode()
-        removeNthFromEnd(five, 2).printNode()
+        removeNthFromEnd(first, 1).print()
+        removeNthFromEnd(second, 1).print()
+        removeNthFromEnd(third, 2).print()
+        removeNthFromEnd(four, 2).print()
+        removeNthFromEnd(five, 2).print()
     }
 
 

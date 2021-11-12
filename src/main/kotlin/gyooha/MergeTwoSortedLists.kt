@@ -1,5 +1,7 @@
 package gyooha
 
+import util.ListNode
+
 class MergeTwoSortedLists {
     fun mergeTwoLists(l1: ListNode?, l2: ListNode?): ListNode? {
         val list = mutableListOf<Int>()
@@ -25,9 +27,5 @@ class MergeTwoSortedLists {
         }
 
         return re?.next
-    }
-
-    class ListNode(var `val`: Int) {
-        var next: ListNode? = null
     }
 }
