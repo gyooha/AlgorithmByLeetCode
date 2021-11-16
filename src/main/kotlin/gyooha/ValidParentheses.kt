@@ -1,8 +1,10 @@
 package gyooha
 
+import java.util.*
+
 class ValidParentheses {
     fun isValid(s: String): Boolean {
-        val stack = CustomStack()
+        val stack = Stack<Char>()
         s.forEach { ch ->
             when (ch) {
                 '(' -> stack.push(')')
@@ -18,34 +20,6 @@ class ValidParentheses {
 
         if (!stack.isEmpty()) return false
         return true
-    }
-
-    class CustomStack(s: String = "") {
-        private var items = mutableListOf<Char>()
-        init {
-            s.forEach {
-                items.add(it)
-            }
-        }
-
-        fun push(c: Char) {
-            items.add(c)
-        }
-
-        fun pop(): Char? {
-            return when (items.isEmpty()) {
-                true -> null
-                false -> {
-                    val lastItem = items.last()
-                    items.removeAt(items.size - 1)
-                    return lastItem
-                }
-            }
-        }
-
-        fun peek(): Char? = items.lastOrNull()
-
-        fun isEmpty(): Boolean = items.isEmpty()
     }
 }
 
